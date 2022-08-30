@@ -9,22 +9,18 @@ class Server:
 
     def __init__(self, msg):
         try:
-            # the message to upload in bytes
+            
             self.msg = msg
 
-            # define a socket
             self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
             self.connections = []
-
-            # make a list of peers 
+             
             self.peers = []
-
-            # bind the socket
+            
             self.s.bind(('127.0.0.1', 5000))
-
-            # listen for connection
+            
             self.s.listen(1)
 
             print("-" * 12+ "Server Running"+ "-" *21)
@@ -34,15 +30,7 @@ class Server:
             sys.exit()
 
 
-
-    """
-    This method deals with sending info to the clients 
-    This methods also closes the connection if the client has left
-    :param: connection -> The connection server is connected to 
-    :param: a -> (ip address, port) of the system connected
-    """
     def handler(self, connection, a):
-        
         try:
             while True:
                 # server recieves the message
@@ -56,18 +44,13 @@ class Server:
                         self.disconnect(connection, a)
                         return
                     elif data and data.decode('utf-8') == "req":
-                        # print("-" * 21 + " UPLOADING " + "-" * 21)
-                        # if the connection is still active we send it back the data
-                        # this part deals with uploading of the file
+                    
                         connection.send(self.msg)
-                        #convert_to_music(self.msg)
+                        
         except Exception as e:
             sys.exit()
 
 
-    """
-        This method is run when the user disconencts
-    """
     def disconnect(self, connection, a):
         self.connections.remove(connection)
         self.peers.remove(a)
@@ -78,10 +61,7 @@ class Server:
 
 
 
-    """
-        This method is use to run the server
-        This method creates a different thread for each client
-    """
+    
     def run(self):
         # constantly listeen for connections
         while True:
@@ -89,8 +69,13 @@ class Server:
 
             # append to the list of peers 
             self.peers.append(a)
-            print("Peers are: {}".format(self.peers) )
+            #print("Peers are: {}".format(self.peers) )
             self.send_peers()
+            count = 0
+            for peer in self.peers:
+                print(count ,peer[0], "", peer[1])
+                count += 1
+
             # create a thread for a connection
             c_thread = threading.Thread(target=self.handler, args=(connection, a))
             c_thread.daemon = True
@@ -101,9 +86,7 @@ class Server:
 
 
 
-    """
-        send a list of peers to all the peers that are connected to the server
-    """
+    
     def send_peers(self):
         peer_list = ""
         for peer in self.peers:
