@@ -6,13 +6,11 @@ import time
 
 
 class p2p:
-    # make ourself the default peer
     peers = ['127.0.0.1']
 
 
 def main():
-    # if the server breks we try to make a client a new server
-    #msg = convert()
+
 
 
     msg = "test message".encode('utf-8')
@@ -23,7 +21,7 @@ def main():
             time.sleep(2)
             for peer in p2p.peers:
                 try:
-                    client = Client(peer)
+                    client = ClientConnection(peer)
                 except KeyboardInterrupt:
                     sys.exit(0)
                 except:
@@ -32,7 +30,7 @@ def main():
 
                 # become the server
                 try:
-                    server = Server(msg)
+                    server = ServerConnection(msg)
                 except KeyboardInterrupt:
                     sys.exit()
                 except:

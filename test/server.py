@@ -4,7 +4,7 @@ import sys
 
 
 
-class Server: 
+class ServerConnection: 
 
 
     def __init__(self, msg):

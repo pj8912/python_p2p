@@ -5,7 +5,7 @@ import sys
 # from peer import Peer
 
 
-class Client: 
+class ClientConnection: 
 
     def __init__(self, addr):
        # set up socket

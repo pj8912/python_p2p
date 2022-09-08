@@ -5,7 +5,7 @@ import sys
 # from peer import Peer
 
 
-class Client: 
+class ClientConnection: 
 
     def __init__(self, addr):
        
@@ -39,9 +39,9 @@ class Client:
 
            elif data[0:1] == b'\x11':
                print("Got peers")
-               
+                
                self.update_peers(data[1:])
-
+               print("\n",data[1:], "\n")
 
 
 
