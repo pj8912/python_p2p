@@ -1,5 +1,4 @@
 import sys
-# sys.path.insert(1,'~/Desktop/python_p2p/test')
 from client import *
 from server import *
 import time
