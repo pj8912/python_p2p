@@ -9,9 +9,7 @@ class p2p:
 
 
 def main():
-
-
-
+    
     msg = "test message".encode('utf-8')
     while True:
         try:
