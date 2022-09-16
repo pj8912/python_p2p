@@ -16,7 +16,6 @@ def main():
     while True:
         try:
             print("-" * 21 + "Trying to connect" + "-" * 21)
-            # sleep a random time between 1 -5 seconds
             time.sleep(2)
             for peer in p2p.peers:
                 try:
