@@ -3,8 +3,8 @@ Peer-to-Peer network in python
 
 I use python sockets to create a peer-to-peer network. The server and client files are separate from each other.
 
-Run 
->python3 peer.py
+## Quick Start 
+> python3 peer.py
 
 
 The peer.py file combines both the server and the client files together to create a Peer in the network. 
