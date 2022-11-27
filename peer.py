@@ -13,7 +13,7 @@ def main():
     msg = "test message".encode('utf-8')
     while True:
         try:
-            print("-" * 21 + "Trying to connect" + "-" * 21)
+            print("-" * 21 + "connecting" + "-" * 21)
             time.sleep(2)
             for peer in p2p.peers:
                 try:
