@@ -26,5 +26,9 @@ This is a peer-to-peer network built using Python programming language. The netw
 - Dynamic discovery of other nodes in the network.
 - Ability to send messages to other nodes in the network.
 
+## Limitations
+- The network does not support secure communication and is vulnerable to hacking and eavesdropping.
+
+
 ## Contribute
 - If you are interested in contributing to the development of the P2P network, you can create a pull request with your changes. All contributions are welcome and appreciated.
