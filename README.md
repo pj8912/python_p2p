@@ -30,5 +30,12 @@ This is a peer-to-peer network built using Python programming language. The netw
 - The network does not support secure communication and is vulnerable to hacking and eavesdropping.
 
 
+## Hybrid approach
+
+In a hybrid approach, both client and server components play a role in managing the peer list and maintaining the P2P network. 
+Check out [Hybrid approach](https://github.com/pj8912/python_p2p/tree/main/hybrid-approach)
+
+
+
 ## Contribute
 - If you are interested in contributing to the development of the P2P network, you can create a pull request with your changes. All contributions are welcome and appreciated.
