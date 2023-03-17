@@ -1,1 +1,25 @@
-__pycache__
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Distribution folders
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Logs and local files
+*.log
+*.sqlite3
+local_settings.py
+settings_local.py
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
